@@ -21,14 +21,14 @@ function App() {
       <button onClick={changeUser}>바뀐다</button>
       <div>
         <h1>Todo List...</h1>
-        {/* {todo.todoList?.map((e) => ( */}
-        {/* <> */}
-        <h3>{todo.todoList[0].title}</h3>
-        <div>{todo.todoList[0].done === false ? <div>아직 진행중..</div> : <div>done!</div>}</div>
-        <button onClick={doneHandler}>완료</button>
-        <hr />
-        {/* </> */}
-        {/* ))} */}
+        {todo.todoList?.map((e) => (
+          <div key={e.title}>
+            <h3>{e.title}</h3>
+            <div>{e.done === false ? <div>아직 진행중..</div> : <div>done!</div>}</div>
+            <button onClick={doneHandler}>완료</button>
+            <hr />
+          </div>
+        ))}
         <br />
       </div>
     </div>
